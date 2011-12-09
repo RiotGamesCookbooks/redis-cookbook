@@ -1,19 +1,15 @@
-# Riot Redis cookbook
+# Redis cookbook
 
-Provides recipes to install Redis and definitions to manage Redis instances on nodes
+Provides a recipe to install and configure Redis
 
 # Requirements
 
 * Centos 5.5
 * Chef 10
 
-# Usage
+# Attributes
 
-TODO: Add basic usage
-
-# Definitions
-
-TODO: Add definition usage
+Each attribute maps to a configurable in the `redis.conf` that will be written to your node. You should consult the attribute file and the redis documentation for a 1:1 mapping of definitions.
 
 # License and Author
 
