@@ -38,7 +38,6 @@ end
 
 template "#{node[:redis][:conf_dir]}/redis.conf" do
   source "redis.conf.erb"
-  cookbook "redis"
   mode "0644"
   notifies :restart, "service[redis]"
 end
