@@ -5,8 +5,7 @@ Provides a recipe to install and configure Redis
 # Requirements
 
 * Centos 5.5
-* Chef 10
-* Chef 9
+* Chef > 9
 
 # Attributes
 
