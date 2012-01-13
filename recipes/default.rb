@@ -36,13 +36,13 @@ directory node[:redis][:db_dir] do
   mode "0750"
 end
 
-template "#{node[:redis][:conf_dir]}/redis.conf" do
-  source "redis.conf.erb"
-  mode "0644"
-  notifies :restart, "service[redis]"
-end
-
 service "redis" do
   supports :reload => false, :restart => true, :start => true, :stop => true
   action [ :enable, :start ]
+end
+
+template "#{node[:redis][:conf_dir]}/redis.conf" do
+  source "redis.conf.erb"
+  mode "0644"
+  notifies :restart, resources(:service => "redis")
 end
